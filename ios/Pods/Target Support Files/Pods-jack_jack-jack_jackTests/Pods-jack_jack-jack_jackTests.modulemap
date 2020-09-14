@@ -1,0 +1,6 @@
+module Pods_jack_jack_jack_jackTests {
+  umbrella header "Pods-jack_jack-jack_jackTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
