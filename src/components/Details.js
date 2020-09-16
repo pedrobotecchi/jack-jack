@@ -3,7 +3,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AsyncStorage, Alert } from 'react-native';
 import StarRating from '../assets/starRatingBar/StarRating';
-
+import {styles} from '../styles/styles'
 import {
     StyleSheet,
     View,
@@ -90,7 +90,7 @@ export default class Details extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.titleContainer}>
-                    <TextInput style={styles.textInputFont}
+                    <TextInput style={styles.textInputFont2}
                         onChangeText={(title) => this.setState({title})}
                         placeholder={task.title}
                         placeholderTextColor={'black'}/>
@@ -108,12 +108,12 @@ export default class Details extends React.Component {
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity
-                        style={styles.buttonStyle}
+                        style={styles.buttonStyle2}
                         onPress={()=> {_removeTask();}}>
                         <Text>Remove</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.buttonStyle}
+                        style={styles.buttonStyle2}
                         onPress={()=> {_editTask()}}>
                         <Text>Edit</Text>
                     </TouchableOpacity>
@@ -122,70 +122,3 @@ export default class Details extends React.Component {
         );
     };
 }
-
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        alignContent:'center',
-        alignItems:'center',
-    },
-    buttonContainer:{
-        flex:1,
-        flexDirection:'row',
-    },
-    descFont:{
-        fontSize:30
-    },
-    buttonStyle:{
-        width:80,
-        height:40,
-        backgroundColor:'#3498db',
-        borderRadius:4,
-        marginTop:10,
-        alignItems:'center',
-        justifyContent:'center',
-        marginRight:10,
-    },
-    containerStars:{
-        flexDirection:'row',
-    },
-    image:{
-        width:30,
-        height:30,
-        marginLeft:25,
-        marginTop:15,
-        marginBottom:15
-    },
-    textInputFont:{
-        width:300,
-        height:40,
-        fontSize:40,
-        textAlign:'center'
-    },
-    fieldLabel:{
-        fontSize:20,
-        marginTop:20,
-    },
-    descText:{
-        marginTop:10,
-        fontSize:20
-    },  
-    titleContainer:{
-        marginTop:80,
-        borderWidth:1,
-        width:350,
-        height:60
-    },
-    titleText:{
-        fontSize:40,
-        textAlign:'center',
-        alignItems:'center',
-    },
-    descContainer:{
-        borderTopWidth:1,
-        borderBottomWidth:1,
-        width:350,
-
-    }
-})

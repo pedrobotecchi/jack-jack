@@ -9,6 +9,7 @@ import {
     Image,
   } from 'react-native';
   
+import {styles} from '../styles/styles'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class List extends React.Component {
@@ -65,10 +66,10 @@ export default class List extends React.Component {
 
         return (
         <View style={styles.container}>
-            <View style={styles.textView}>
+            <View style={styles.textViewList}>
                 <Text style={styles.fontText}>Your To-Dos</Text>
                 <TouchableOpacity
-                    style={styles.buttonStyle}
+                    style={styles.buttonStyleList}
                     onPress={()=> {this.props.navigation.navigate('Insert')
                                     }}>
                     <Text>+</Text>
@@ -94,59 +95,3 @@ export default class List extends React.Component {
         );
     }
 };
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        alignItems:'center',
-        alignContent:'center',
-    },
-    containerStars:{
-        flexDirection:'row',
-    },
-    image:{
-        width:30,
-        height:30,
-        marginLeft:25,
-        marginTop:15,
-        marginBottom:15
-    },
-    listContainer:{
-        marginTop:25,
-    },
-    itemFont:{
-        fontSize:20,
-    }, 
-    listItem:{
-        borderWidth:1,
-        width:325,
-        marginBottom:15,        
-    }, 
-    textView:{
-        marginTop: 80,
-        paddingHorizontal: 24,
-        flexDirection:'row',
-        borderRadius:2,
-        borderColor:'black',
-        marginBottom:20,
-    },
-    fontText:{
-        fontSize: 30,
-        marginTop:10,
-        marginRight:10,
-        marginBottom:-100,
-        fontWeight: '600',
-        color: 'black',
-        textAlign:'center',
-        justifyContent:'center',
-    },
-    buttonStyle:{
-        width:40,
-        height:40,
-        backgroundColor:'#3498db',
-        borderRadius:4,
-        marginTop:10,
-        alignItems:'center',
-        justifyContent:'center',
-    },
-});

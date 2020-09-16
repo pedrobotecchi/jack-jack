@@ -3,6 +3,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import StarRating from '../assets/starRatingBar/StarRating';
 import {AsyncStorage} from 'react-native'
+import {styles} from '../styles/styles'
 
 import {
     StyleSheet,
@@ -101,47 +102,3 @@ export default class Insert extends React.Component {
         );
     };
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        alignItems:'center',
-        alignContent:'center',
-    },
-    fieldContainer:{
-        flex:4,
-        flexDirection:'column',
-    },
-    textInputFont:{
-        borderColor:'black',
-        borderWidth:1,
-        width:300,
-        height:40,
-    },
-    textView:{
-        flex:1,
-        marginTop: 120,
-        paddingHorizontal: 24,
-        borderRadius:2,
-        borderColor:'black',
-    },
-    fontText:{
-        fontSize: 30,
-        marginTop:10,
-        marginRight:10,
-        marginBottom:-100,
-        fontWeight: '600',
-        color: 'black',
-        textAlign:'center',
-        justifyContent:'center',
-    },
-    buttonStyle:{
-        width:300,
-        height:40,
-        backgroundColor:'#3498db',
-        borderRadius:4,
-        marginTop:10,
-        alignItems:'center',
-        justifyContent:'center',
-    },
-});
