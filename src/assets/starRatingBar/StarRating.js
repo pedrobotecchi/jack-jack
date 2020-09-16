@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class StarRating extends React.Component{
     state={
-        rating:4,
+        rating:this.props.stars || 4,
         max_rating:5,
     }
 

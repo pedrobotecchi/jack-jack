@@ -1,9 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import StarRating from '../assets/starRatingBar/StarRating';
-import { AsyncStorage } from 'react-native';
+import {AsyncStorage} from 'react-native'
 
 import {
     StyleSheet,
@@ -30,7 +29,6 @@ export default class Insert extends React.Component {
     componentDidMount(){
         AsyncStorage.getItem('TASKS')
             .then((value) => {
-                console.warn("VALUE ", value)
                 this.setState({tasks:JSON.parse(value)})
             })
     }
@@ -38,7 +36,6 @@ export default class Insert extends React.Component {
     _getData = async () => {
         try {
             const value = await AsyncStorage.getItem('TASKS');
-            // this.setState({tasks,})
             return JSON.parse(value);
         } catch (error) {
             console.log("Error : ",error);
@@ -50,7 +47,6 @@ export default class Insert extends React.Component {
         try {
             const {tasks} = this.state;
             tasks.push(task);
-            console.warn("TASKS ", tasks, JSON.stringify(tasks));
             await AsyncStorage.setItem("TASKS",JSON.stringify(tasks));
             return tasks;
         } catch (error) {
@@ -66,7 +62,7 @@ export default class Insert extends React.Component {
             let task = {'title':this.state.title,'description':this.state.descrp,'stars':this.state.stars};
             let insertValdiation = this._storeData(task);    
             if(insertValdiation){
-                Alert.alert("Task Inserted!" + JSON.stringify(insertValdiation));
+                Alert.alert("Task Inserted!");
             }
             else{
                 Alert.alert("ERROR");
@@ -79,7 +75,6 @@ export default class Insert extends React.Component {
     }
 
     render(){
-        console.warn(this.props.route);
         return (
             <View style={styles.container}>
                 <View style={styles.textView}>
